@@ -1,6 +1,6 @@
-document.getElementById('myButton').addEventListener('click', function() {
+document.getElementById('Button1').addEventListener('click', function() {
         // Anfrage an den Server auf Client 2 senden (XAMPP auf 192.168.1.6)
-    fetch('http://192.168.1.6/run_script.php', {
+    fetch('http://192.168.1.128/run_script.php', {
         method: 'GET',
     })
     .then(response => {
