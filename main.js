@@ -1,7 +1,7 @@
 document.getElementById('Button1').addEventListener('click', function() {
     window.alert("clicked")
-    fetch('http://192.168.1.128/script.php', {
-        method: 'GET',
+    fetch('http://192.168.66.66/script.php', {
+        method: 'POST',
         mode: 'no-cors',
     })
     .then(response => {
