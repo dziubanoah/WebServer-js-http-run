@@ -1,7 +1,8 @@
 document.getElementById('Button1').addEventListener('click', function() {
-        // Anfrage an den Server auf Client 2 senden (XAMPP auf 192.168.1.6)
-    fetch('http://192.168.1.128/run_script.php', {
+    window.alert("clicked")
+    fetch('http://192.168.1.128/run_script.php?action=open_window', {
         method: 'GET',
+        mode: 'no-cors',
     })
     .then(response => {
         if (response.ok) {
