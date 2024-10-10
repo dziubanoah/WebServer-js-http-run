@@ -5,7 +5,7 @@ header("Access-Control-Allow-Methods: GET");
 header("Access-Control-Max-Age: 31536000");  // Speichert die CORS-Erlaubnis auf 1 Jahr (Für immer nich möglich)
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') { //wartet auf die get anfrage vom main.js
-    echo "Server ist erreichbar";
+    echo "Bankserver ist erreichbar - ";
     $jarFile = 'main.jar';
     
 
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') { //wartet auf die get anfrage vom mai
         $command = "start javaw -jar " . escapeshellarg($jarFile);
         pclose(popen($command, "r"));
 
-        echo "Anfrage angenommen und .jar-Datei gestartet.";
+        echo " Anfrage angenommen und Auftrag bearbeitet. ";
     } else {
         echo "Die Datei wurde nicht gefunden.";
     }
