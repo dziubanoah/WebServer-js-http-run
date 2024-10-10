@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+if ($_SERVER['REQUEST_METHOD'] === 'GET') { //wartet auf die get anfrage vom main.js
     $jarFile = 'main.jar';
 
     if (file_exists($jarFile)) {
@@ -13,12 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 } else {
     echo "Nur GET-Anfragen werden akzeptiert.";
 }
-$team = "MeinTeam"; // Ersetze dies durch den gewünschten Teamnamen
-$datum = date("Y-m-d"); // Aktuelles Datum im Format Jahr-Monat-Tag
-$zeit = date("H:i:s"); // Aktuelle Uhrzeit im Format Stunden:Minuten:Sekunden
+$team = "MeinTeam"; 
+$datum = date("Y-m-d"); 
+$zeit = date("H:i:s"); 
 
 $logEintrag = "Team: $team, Datum: $datum, Zeit: $zeit\n";
 
-// Schreibe den Eintrag in die log.txt
+//damit man nicht so dumm ist wie ich: DIE log.txt SOLLTE IM SELBEN VERZEICHNISS EXISTIEREN  ^^
 file_put_contents('log.txt', $logEintrag, FILE_APPEND);
 ?>
