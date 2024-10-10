@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') { //wartet auf die get anfrage vom mai
         $command = "start javaw -jar " . escapeshellarg($jarFile);
         pclose(popen($command, "r"));
 
-        echo " Anfrage angenommen und Auftrag bearbeitet. ";
+        echo "Anfrage angenommen und Auftrag bearbeitet. ";
     } else {
         echo "Die Datei wurde nicht gefunden.";
     }

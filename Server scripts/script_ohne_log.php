@@ -6,6 +6,7 @@ header("Access-Control-Max-Age: 31536000");  // Speichert die CORS-Erlaubnis auf
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $jarFile = 'main.jar';
+    echo "Bankserver ist erreichbar - ";
 
     if (file_exists($jarFile)) {
         $command = "start javaw -jar " . escapeshellarg($jarFile);
