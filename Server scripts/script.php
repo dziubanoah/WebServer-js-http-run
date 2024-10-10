@@ -1,12 +1,24 @@
 <?php
-header("Access-Control-Allow-Origin: *");  // Erlaubt Anfragen von jeder Quelle
-header("Access-Control-Allow-Methods: GET");  // Erlaubt GET, POST und OPTIONS Anfragen
-header("Access-Control-Max-Age: 8400");  // Speichert die CORS-Erlaubnis für 24 Stunden
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $jarFile = 'main.jar';
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    echo"GET works";
+    if (file_exists($jarFile)) {
+        $command = "start javaw -jar " . escapeshellarg($jarFile);
+        pclose(popen($command, "r"));
+
+        echo "Anfrage angenommen und .jar-Datei gestartet.";
+    } else {
+        echo "Die Datei wurde nicht gefunden.";
+    }
+} else {
+    echo "Nur GET-Anfragen werden akzeptiert.";
 }
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo"POST Works";
-}
+$team = "MeinTeam"; // Ersetze dies durch den gewünschten Teamnamen
+$datum = date("Y-m-d"); // Aktuelles Datum im Format Jahr-Monat-Tag
+$zeit = date("H:i:s"); // Aktuelle Uhrzeit im Format Stunden:Minuten:Sekunden
+
+$logEintrag = "Team: $team, Datum: $datum, Zeit: $zeit\n";
+
+// Schreibe den Eintrag in die log.txt
+file_put_contents('log.txt', $logEintrag, FILE_APPEND);
 ?>
