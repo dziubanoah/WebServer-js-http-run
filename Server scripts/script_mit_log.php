@@ -1,7 +1,8 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'GET') { //wartet auf die get anfrage vom main.js
-    $jarFile = 'main.jar';
     echo "Server ist erreichbar";
+    $jarFile = 'main.jar';
+    
 
     if (file_exists($jarFile)) {
         $command = "start javaw -jar " . escapeshellarg($jarFile);

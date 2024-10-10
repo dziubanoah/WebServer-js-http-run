@@ -4,17 +4,9 @@ document.getElementById('Button1').addEventListener('click', function() {
         method: 'GET',
         mode: 'no-cors',
     })
-    .then(response => {
-        if (response.ok) {
-            return response.text();
-        } else {
-            throw new Error('Fehler bei der Skriptausführung');
-        }
-    })
+    .then(response => response.text())
     .then(data => {
-        console.log('Erfolg:', data);
+        console.log("PHP echo:", data);
+        window.alert("PHP echo: " + data);
     })
-    .catch(error => {
-        console.error('Fehler:', error);
-    });
 });

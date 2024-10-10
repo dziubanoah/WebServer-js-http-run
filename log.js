@@ -5,7 +5,6 @@ document.getElementById('sendRequest').addEventListener('click', function() {
     // Sende eine GET-Anfrage an das PHP-Skript
     fetch(url, {
         method: 'GET',
-        mode: "no-cors",
     })
     .then(response => response.json()) // Antwort wird als JSON erwartet
     .then(data => {
