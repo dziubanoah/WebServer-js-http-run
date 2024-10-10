@@ -1,0 +1,24 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'GET') { //wartet auf die get anfrage vom main.js
+    $jarFile = 'main.jar';
+
+    if (file_exists($jarFile)) {
+        $command = "start javaw -jar " . escapeshellarg($jarFile);
+        pclose(popen($command, "r"));
+
+        echo "Anfrage angenommen und .jar-Datei gestartet.";
+    } else {
+        echo "Die Datei wurde nicht gefunden.";
+    }
+} else {
+    echo "Nur GET-Anfragen werden akzeptiert.";
+}
+$team = "MeinTeam"; 
+$datum = date("Y-m-d"); 
+$zeit = date("H:i:s"); 
+
+$logEintrag = "Team: $team, Datum: $datum, Zeit: $zeit\n";
+
+//damit man nicht so dumm ist wie ich: DIE log.txt SOLLTE IM SELBEN VERZEICHNISS EXISTIEREN  ^^
+file_put_contents('log.txt', $logEintrag, FILE_APPEND);
+?>
