@@ -1,8 +1,8 @@
 <?php
 // erlaubt cors
-header("Access-Control-Allow-Origin: *");  // Erlaubt Anfragen von jeder Quelle
-header("Access-Control-Allow-Methods: GET");  // Erlaubt GET, POST und OPTIONS Anfragen
-header("Access-Control-Max-Age: 8400");  // Speichert die CORS-Erlaubnis für 24 Stunden
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET");
+header("Access-Control-Max-Age: 31536000");  // Speichert die CORS-Erlaubnis auf 1 Jahr (Für immer nich möglich)
 
 // Logik für das eigentliche Speichern des Kontakts
 

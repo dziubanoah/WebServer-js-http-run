@@ -1,4 +1,9 @@
 <?php
+// erlaubt cors
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET");
+header("Access-Control-Max-Age: 31536000");  // Speichert die CORS-Erlaubnis auf 1 Jahr (Für immer nich möglich)
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET') { //wartet auf die get anfrage vom main.js
     echo "Server ist erreichbar";
     $jarFile = 'main.jar';
