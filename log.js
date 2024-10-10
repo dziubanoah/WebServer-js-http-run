@@ -17,3 +17,5 @@ document.getElementById('sendRequest').addEventListener('click', function() {
         console.error('Fehler:', error);
     });
 });
+
+//nich gebraucht in v1.9. Das main script um den Log zu schreiben ist in der script_mit_log.php
