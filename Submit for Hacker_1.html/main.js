@@ -1,4 +1,4 @@
-let input = document.getElementById("NameInput");
+var input = document.getElementById("NameInput");
 let submit = document.getElementById("submit");  // Korrekt: 'submit', nicht 'Sumit'
 let ni = 0;
 function getClientId() {
@@ -24,16 +24,21 @@ else (
     console.log("Die coockie ID aus main.js ist nicht korrekt")
 );
 submit.addEventListener("click", function () {
+    ni = 1;
+    if(ni == 1){
+    //window.alert("works" + input.value);
+};
+    let data = input.value;
+    //window.alert(data);
+    
     fetch('http://192.168.66.66/script_mit_log.php', {
-        method: 'GET',
+        method: 'POST',
     })
     .then(response => response.text())
     .then(data => {
         console.log("PHP echo:", data);
         window.alert("PHP echo: " + data);
-        ni++;
+
+
     })
 });
-if(ni == 1){
-    window.alert("works" + input);
-};
