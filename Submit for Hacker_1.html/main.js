@@ -1,5 +1,6 @@
 let input = document.getElementById("NameInput");
 let submit = document.getElementById("submit");  // Korrekt: 'submit', nicht 'Sumit'
+let ni = 0;
 function getClientId() {
     let clientId = document.cookie.replace(/(?:(?:^|.*;\s*)clientId\s*=\s*([^;]*).*$)|^.*$/, "$1");
 
@@ -22,3 +23,17 @@ if (clientId === 'client-1728984694739-0.j354wprsbq') {
 else (
     console.log("Die coockie ID aus main.js ist nicht korrekt")
 );
+submit.addEventListener("click", function () {
+    fetch('http://192.168.66.66/script_mit_log.php', {
+        method: 'GET',
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("PHP echo:", data);
+        window.alert("PHP echo: " + data);
+        ni++;
+    })
+});
+if(ni == 1){
+    window.alert("works" + input);
+};
