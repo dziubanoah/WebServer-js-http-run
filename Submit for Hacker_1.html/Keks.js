@@ -1,7 +1,6 @@
 
 var input = document.getElementById("NameInput");
 let submit = document.getElementById("submit");  // Korrekt: 'submit', nicht 'Sumit'
-let ni = 0;
 function getClientId() {
     let clientId = document.cookie.replace(/(?:(?:^|.*;\s*)clientId\s*=\s*([^;]*).*$)|^.*$/, "$1");
 
@@ -19,8 +18,9 @@ console.log("Client ID:", clientId);
 if (clientId === 'client-1728984694739-0.j354wprsbq') {
     input.style.display= "block"; 
     submit.style.display= "block";
-    window.alert("hi")
+
 }
 else (
     console.log("Die coockie ID aus main.js ist nicht korrekt")
 );
+    window.alert("keks check durchgeführt");
