@@ -30,9 +30,10 @@ submit.addEventListener("click", function () {
 };
     let data = input.value;
     //window.alert(data);
-    
-    fetch('http://192.168.66.66/script_mit_log.php', {
+
+    fetch('http://192.168.1.1/script_mit_log.php', {
         method: 'POST',
+        body: JSON.stringify({"inputname": data})
     })
     .then(response => response.text())
     .then(data => {
